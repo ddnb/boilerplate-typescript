@@ -103,8 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-.DS_Store
-
 # Yarn
 **/.yarn/*
 !**/.yarn/releases
@@ -112,9 +110,6 @@ dist
 !**/.yarn/sdks
 !**/.yarn/versions
 **/.pnp.*
-.yarnrc.yml
-yarn.lock
-.yarn
 
 # Project
 .idea/
