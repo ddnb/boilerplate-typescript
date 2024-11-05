@@ -74,8 +74,12 @@ jobs:
     needs:
       - test
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set version output
+        id: set_version
+        run: echo "version=$(cat version.txt)" >> $GITHUB_ENV
 
       - name: Use Node
         id: setup-node
@@ -93,7 +97,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Deps
+      - name: Dependency Installation
         run: |
           npm ci
 
@@ -102,7 +106,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.PUBLISHER_NPM_TOKEN }}
         run: |
           npm publish --access public
-
+      
+      # Archived
+      # https://github.com/actions/create-release
+      # RESEARCH generate CHANGELOG for each release
       - name: Release
         uses: actions/create-release@v1
         env:
@@ -113,7 +120,6 @@ jobs:
           body_path: CHANGELOG.md
           draft: false
           prerelease: contains(github.ref, '-')
-
 
   automerge:
     needs:
