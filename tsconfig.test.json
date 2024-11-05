@@ -4,6 +4,11 @@
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnusedLabels": true,
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "rootDir": "./src"
+    // "rootDir": "./create-boilerplate-tyepscript/src"
+  },
+  "include": ["src/**/*.ts"],
+  // "include": ["create-boilerplate-tyepscript/src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

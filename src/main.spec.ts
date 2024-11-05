@@ -25,7 +25,7 @@ describe('Example Test', function () {
     const dir = dirname(fileURLToPath(import.meta.url))
     const index = Path.resolve(dir, 'index.ts')
     const tsNodeExe = process.platform === 'win32' ? './node_modules/.bin/ts-node.cmd' : './node_modules/.bin/ts-node'
-    const proc = await spawn(tsNodeExe, [index])
+    const proc = spawn(tsNodeExe, [index])
 
     expect(proc.pid).toBeDefined()
 
