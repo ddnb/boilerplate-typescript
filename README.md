@@ -37,7 +37,7 @@ npx boilerplate-typescript --no --app=your-app
 ### NPM Init
 
 ```
-npm init nodejs-ts -- --app=your-app
+npm init boilerplate-typescript -- --app=your-app
 ```
 
 Without parameters, the project will be created on a folder **my-app** in the same directory where you executed the
