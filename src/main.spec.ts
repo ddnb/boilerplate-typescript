@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import fs from 'fs'
 import main from './main.js'
 import { createRequire } from 'module'
-const require = createRequire(import.meta.url) // To use require in an ES module, you need to create a function to handle it:
+const require = createRequire(import.meta.url)
 
 describe('Example Test', function () {
   it('should GET / with 200 OK', function () {
@@ -34,7 +34,7 @@ describe('Example Test', function () {
       throw new Error(`ts-node executable not found at ${tsNodeExe}`)
     }
 
-    const proc = spawn(tsNodeExe, [index])
+    const proc = spawn(tsNodeExe, [index], { shell: process.platform === 'win32' })
 
     proc.on('error', err => {
       console.error('Failed to start subprocess:', err)
