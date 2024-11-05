@@ -1,7 +1,9 @@
-<h1 align="center">Node.js Starter ToolKit</h1>
+<h1 align="center">Typescript Boilerplate for Node.js Project</h1>
 
 <p align="center">
-    <i>Starter Project for a Node.js application using <strong>TypeScript</strong> with all boring stuff already configured.</i>
+    <i>Boilerplate Project for a Node.js application using <strong>TypeScript</strong> with all core stuff already configured. 
+    <br />
+    It's like a pizza with all your favorite toppings, but for code! 🍕🍕🍕</i>
 </p>
 
 <p align="center">
@@ -21,8 +23,8 @@
 
 ## Overview
 
-Starter project for **Node.js** applications using **TypeScript** with test, lint, code formatter already configured.
-Check the [tooling](#tooling) section for more details.  
+Boilerplate project for **Node.js** applications using **TypeScript** with test, lint, code formatter already configured.
+Check the [Key Features](#Key) section for more details.  
 The preferable way to use this boilerplate is using `npx` command. You can use `npm init` too.  
 Use the following commands to bootstrap a new project:
 
@@ -63,18 +65,19 @@ Check this [Dockerfile](build/docker/Dockerfile).
 Run `make up` to spin up a local environment with **Docker Compose**.  
 Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more details.
 
-## Tooling
+## Key Features
 
-- ESM
-- TypeScript
-- Jest
-- EsLint
-- Husky
-- Commit Lint
-- Lint Staged
-- Prettier
-- Nodemon
-- Docker | Docker Compose
+- **ESM (ECMAScript Modules)**: Uses ESM by default for module management.
+- **TypeScript**: Provides strong typing and modern JavaScript features.
+- **Jest**: Configured for unit testing.
+- **EsLint**: Ensures code quality and consistency.
+- **Husky**: Manages Git hooks.
+- **Commit Lint**: Enforces conventional commit messages.
+- **Lint Staged**: Runs linters on staged Git files.
+- **Prettier**: Formats code for readability.
+- **Nodemon**: Automatically restarts the application on file changes during development.
+- **Docker**: Includes a minimalist Docker image generation.
+- **Docker Compose**: Sets up a local development environment with Docker Compose.
 
 ## License
 
