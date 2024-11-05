@@ -19,7 +19,7 @@ export default function main(port: number = Config.port) {
   const requestListener = (request: IncomingMessage, response: ServerResponse) => {
     response.setHeader('content-type', 'text/plain;charset=utf8')
     response.writeHead(200, 'OK')
-    response.end('Olá, Hola, Hello!')
+    response.end('Hello, World!')
   }
 
   const server = createServer(requestListener)
