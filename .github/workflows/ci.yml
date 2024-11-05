@@ -81,7 +81,7 @@ jobs:
         id: setup-node
         uses: actions/setup-node@v4.1.0
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLISHER_NPM_TOKEN }}
         with:
           node-version: 22.x
           registry-url: 'https://registry.npmjs.org'
@@ -99,14 +99,14 @@ jobs:
 
       - name: Publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLISHER_NPM_TOKEN }}
         run: |
           npm publish --access public
 
       - name: Release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PUBLISHER_GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -125,4 +125,4 @@ jobs:
     steps:
       - uses: fastify/github-action-merge-dependabot@v3.11.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PUBLISHER_GITHUB_TOKEN }}
