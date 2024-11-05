@@ -60,7 +60,8 @@ const Templates = [
 const PkgFieldsToKeep = ['type', 'main', 'types', 'scripts', 'dependencies', 'devDependencies']
 
 function main() {
-  console.log('NodeJS Starter Kit - Bootstrapping New Project')
+  // eslint-disable-next-line no-console
+  console.log('Boilerplate Typescript - Bootstrapping New Project')
 
   const argv = process.argv.slice(2)
   const args = new Map()
@@ -87,6 +88,7 @@ function main() {
   const app = paramOr(args, 'name', 'my-app').trim()
   const destination = makePath(dest, app)
 
+  // eslint-disable-next-line no-console
   console.log(
     `
 Summary:
@@ -95,16 +97,19 @@ App: ${app}
 `,
   )
 
+  // eslint-disable-next-line no-console
   console.log('Copying Project Files ...')
 
   FsExt.copySync(source, destination, { filter: ignoreContent(...FilesToIgnore.map(x => makePath(source, x))) })
 
+  // eslint-disable-next-line no-console
   console.log('Copying Templates ...')
 
   for (const x of Templates) {
     FsExt.copySync(makePath(source, 'templates', x.file), makePath(destination, x.copyTo))
   }
 
+  // eslint-disable-next-line no-console
   console.log('Preparing package.json ...')
 
   const pkg = FsExt.readJsonSync(makePath(source, 'package.json'))
@@ -132,6 +137,7 @@ App: ${app}
 
   FsExt.writeJsonSync(makePath(destination, 'package.json'), newPkg, { spaces: 2 })
 
+  // eslint-disable-next-line no-console
   console.log('\nDone!')
 
   return Promise.resolve()

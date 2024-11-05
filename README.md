@@ -24,7 +24,7 @@
 ## Overview
 
 Boilerplate project for **Node.js** applications using **TypeScript** with test, lint, code formatter already configured.
-Check the [Key Features](#Key) section for more details.  
+Check the [Key Features](#key-features) section for more details.  
 The preferable way to use this boilerplate is using `npx` command. You can use `npm init` too.  
 Use the following commands to bootstrap a new project:
 
